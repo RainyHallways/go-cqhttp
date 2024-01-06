@@ -472,8 +472,8 @@ func newClient() *client.QQClient {
 }
 
 var remoteVersions = map[int]string{
-	1: "https://raw.githubusercontent.com/RainyHallways/protocol-versions/master/android_phone.json",
-	6: "https://raw.githubusercontent.com/RainyHallways/protocol-versions/master/android_pad.json",
+	1: "RainyHallways/protocol-versions/master/android_phone.json",
+	6: "RainyHallways/protocol-versions/master/android_pad.json",
 }
 
 func getRemoteLatestProtocolVersion(protocolType int) ([]byte, error) {
@@ -483,7 +483,7 @@ func getRemoteLatestProtocolVersion(protocolType int) ([]byte, error) {
 	}
 	response, err := download.Request{URL: url}.Bytes()
 	if err != nil {
-		return download.Request{URL: "https://ghproxy.com/" + url}.Bytes()
+		return download.Request{URL: "https://raw.fgit.cf/" + url}.Bytes()
 	}
 	return response, nil
 }
